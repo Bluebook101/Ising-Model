@@ -1,0 +1,19 @@
+#!/bin/gnuplot -persist 
+
+#set dim equal to DIM in main C code
+dim = 100
+
+set dgrid3d dim,dim
+set terminal x11
+set size square
+set isosample 40
+set view 0,0
+set nosurface
+set view equal xyz
+set palette defined (-1 "blue", 0 "white", 1 "red")
+set pm3d at b
+set zrange[-1:1]
+set style line 1 lc rgb '#000000' pt 1 ps 0.1  # --- black
+
+splot 'Domain.dat' skip 1 using 1:2:3 with linespoints ls 1
+exit

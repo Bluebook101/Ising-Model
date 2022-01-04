@@ -1,0 +1,9 @@
+#!/bin/gnuplot -persist
+set terminal x11 font "Times,20"
+set size square
+set xlabel "B-Field (T)"
+set ylabel "Magnetisation (Non-Dim)"
+set style line 1 lc rgb '#000000' lt 1 lw 1 pt 1 ps 1 # --- black#
+set key off
+plot 'Brillouin.dat' skip 1 using 1:2 with linespoints ls 1 t "Brillouin Comparison"
+exit
